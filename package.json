@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "cd $(git rev-parse --show-toplevel) && next dev",
+    "build": "cd $(git rev-parse --show-toplevel) && next build",
+    "start": "cd $(git rev-parse --show-toplevel) && next start",
+    "lint": "cd $(git rev-parse --show-toplevel) && next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.10",
     "clsx": "^2.1.1",
     "eslint-config-prettier": "^9.1.0",
+    "formik": "^2.4.6",
     "next": "14.2.15",
     "prettier": "^3.3.3",
     "react": "^18",
