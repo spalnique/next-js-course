@@ -1,12 +1,12 @@
 import AddCompanyButton from '@/app/components/add-company-button';
 
-function Home() {
+const Home: NextComponent = () => {
   return (
     <>
       <h1>Home page</h1>
       <AddCompanyButton />
     </>
   );
-}
+};
 
 export default Home;
