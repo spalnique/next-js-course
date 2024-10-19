@@ -1,19 +1,18 @@
-import React from 'react';
+import { FC, PropsWithChildren } from 'react';
 import Image from 'next/image';
 
-export interface SidebarItemProps {
+export type SidebarItemProps = PropsWithChildren & {
   pathname: string;
   src: string;
   alt: string;
-  children: React.ReactNode;
-}
+};
 
-export default function SidebarItem({
+const SidebarItem: FC<SidebarItemProps> = ({
+  children,
   pathname,
   src,
   alt,
-  children,
-}: SidebarItemProps) {
+}) => {
   return (
     <li>
       <a href={pathname} className="flex items-center h-9 mx-1 gap-3.5">
@@ -22,4 +21,6 @@ export default function SidebarItem({
       </a>
     </li>
   );
-}
+};
+
+export default SidebarItem;

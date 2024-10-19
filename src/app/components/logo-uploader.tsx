@@ -1,17 +1,19 @@
 import Image from 'next/image';
-import { InputHTMLAttributes } from 'react';
+import { FC, InputHTMLAttributes } from 'react';
 
-export interface LogoUploaderProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export type LogoUploaderProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> & {
   label?: string;
-}
+};
 
-export default function LogoUploader({
+const LogoUploader: FC<LogoUploaderProps> = ({
   label,
   placeholder,
   id,
   ...rest
-}: LogoUploaderProps) {
+}) => {
   return (
     <div className="flex gap-10 mb-3">
       {label && <p className="text-base color-gray-900">{label}</p>}
@@ -38,4 +40,6 @@ export default function LogoUploader({
       </label>
     </div>
   );
-}
+};
+
+export default LogoUploader;

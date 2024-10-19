@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Header from '@/app/components/header';
 import Toolbar from '@/app/components/toolbar';
 import SearchInput from '@/app/components/search-input';
@@ -6,7 +7,7 @@ import CompanyRow from '@/app/components/company-row';
 import AddCompanyButton from '@/app/components/add-company-button';
 import { Status } from '@/app/components/status-label';
 
-function Page() {
+const Page: FC = () => {
   return (
     <>
       <Header>Companies</Header>
@@ -26,6 +27,5 @@ function Page() {
       </CompanyTable>
     </>
   );
-}
-
+};
 export default Page;

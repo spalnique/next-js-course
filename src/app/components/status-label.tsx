@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { FC } from 'react';
 
 export enum Status {
   Active = 'Active',
@@ -9,7 +10,7 @@ export enum Status {
 
 export type StatusLabelProps = { status: Status; disabled?: boolean };
 
-function StatusLabel({ status, disabled }: StatusLabelProps) {
+const StatusLabel: FC<StatusLabelProps> = ({ status, disabled }) => {
   return (
     <>
       <div
@@ -26,6 +27,6 @@ function StatusLabel({ status, disabled }: StatusLabelProps) {
       </div>
     </>
   );
-}
+};
 
 export default StatusLabel;

@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentType, useState } from 'react';
+import { ComponentType, FC, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 import Button from '@/app/components/button';
@@ -13,7 +13,7 @@ const CompanyFormModal: ComponentType<CompanyFormModalProps> = dynamic(
   }
 );
 
-function AddCompanyButton() {
+const AddCompanyButton: FC = () => {
   const [show, setShow] = useState(false);
 
   return (
@@ -26,6 +26,6 @@ function AddCompanyButton() {
       />
     </>
   );
-}
+};
 
 export default AddCompanyButton;

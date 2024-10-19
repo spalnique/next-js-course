@@ -1,21 +1,16 @@
 'use client';
 
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import { Field } from 'formik';
 
-// export interface InputFieldProps {
-//   id?: string;
-//   label?: string;
-// }
-export interface InputFieldProps
-  extends Partial<
-    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-  > {
+export type InputFieldProps = Partial<
+  DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+> & {
   label?: string;
   id?: string;
-}
+};
 
-function InputField({ label, id, ...rest }: InputFieldProps) {
+const InputField: FC<InputFieldProps> = ({ label, id, ...rest }) => {
   return (
     <div className={'flex flex-col gap-2'}>
       {label && (
@@ -30,6 +25,6 @@ function InputField({ label, id, ...rest }: InputFieldProps) {
       />
     </div>
   );
-}
+};
 
 export default InputField;

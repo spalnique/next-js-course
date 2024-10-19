@@ -1,11 +1,11 @@
+import { FC, InputHTMLAttributes, MouseEventHandler } from 'react';
 import Image from 'next/image';
-import { InputHTMLAttributes, MouseEventHandler } from 'react';
 
-export type SearchInputProps = {
+export type SearchInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onSearchClick?: MouseEventHandler<HTMLButtonElement>;
-} & InputHTMLAttributes<HTMLInputElement>;
+};
 
-function SearchInput({ onSearchClick, ...rest }: SearchInputProps) {
+const SearchInput: FC<SearchInputProps> = ({ onSearchClick, ...rest }) => {
   return (
     <div className="relative w-96">
       <input
@@ -26,6 +26,6 @@ function SearchInput({ onSearchClick, ...rest }: SearchInputProps) {
       </button>
     </div>
   );
-}
+};
 
 export default SearchInput;

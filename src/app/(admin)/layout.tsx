@@ -1,15 +1,12 @@
-import React from 'react';
+import { FC, PropsWithChildren } from 'react';
 import Sidebar from '@/app/components/sidebar';
 
-export interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Sidebar />
       <div className="ml-60">{children}</div>
     </>
   );
-}
+};
+export default Layout;

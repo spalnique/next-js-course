@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 const headers = [
   'Category',
@@ -9,7 +9,7 @@ const headers = [
   'Joined date',
 ];
 
-function CompanyTable({ children }: PropsWithChildren) {
+const CompanyTable: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="py-8 px-10 bg-gray-100">
       <table className="table-auto w-full border-separate border-spacing-y-2">
@@ -26,6 +26,6 @@ function CompanyTable({ children }: PropsWithChildren) {
       </table>
     </div>
   );
-}
+};
 
 export default CompanyTable;

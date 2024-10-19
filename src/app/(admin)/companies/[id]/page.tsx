@@ -1,14 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import Header from '@/app/components/header';
 
-export interface PageProps {
-  params: { id: string };
-}
-
-export default function Page({ params }: PageProps) {
+const Page: FC<Params> = ({ params }) => {
   return (
     <>
       <Header>Company ({params.id})</Header>
     </>
   );
-}
+};
+export default Page;

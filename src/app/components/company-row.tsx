@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import StatusLabel, { Status } from '@/app/components/status-label';
+import { FC } from 'react';
 
 export interface CompanyRowProps {
   id: number;
@@ -12,7 +13,7 @@ export interface CompanyRowProps {
   joinedDate: string;
 }
 
-function CompanyRow({
+const CompanyRow: FC<CompanyRowProps> = ({
   id,
   category,
   company,
@@ -20,7 +21,7 @@ function CompanyRow({
   promotion,
   country,
   joinedDate,
-}: CompanyRowProps) {
+}) => {
   return (
     <tr className="h-14 text-center text-gray-900 bg-white">
       <td className="text-xs font-medium text-blue-700 rounded-l border-l-4 border-blue-700">
@@ -55,6 +56,5 @@ function CompanyRow({
       </td>
     </tr>
   );
-}
-
+};
 export default CompanyRow;

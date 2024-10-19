@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { FC, Fragment, PropsWithChildren } from 'react';
 import {
   Dialog,
   Transition,
@@ -6,13 +6,12 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 
-export interface ModalProps {
-  children?: ReactNode;
+export type ModalProps = PropsWithChildren & {
   show: boolean;
   onClose: () => void;
-}
+};
 
-export default function Modal({ children, show, onClose }: ModalProps) {
+const Modal: FC<ModalProps> = ({ children, show, onClose }) => {
   return (
     <Transition as={Fragment} show={show}>
       <Dialog
@@ -35,4 +34,6 @@ export default function Modal({ children, show, onClose }: ModalProps) {
       </Dialog>
     </Transition>
   );
-}
+};
+
+export default Modal;

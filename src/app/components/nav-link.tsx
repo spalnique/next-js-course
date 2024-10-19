@@ -1,15 +1,15 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
 
-type NavLinkProps = {
+type NavLinkProps = PropsWithChildren & {
   path: string;
-} & PropsWithChildren;
+};
 
-function NavLink({ path, children }: NavLinkProps) {
+const NavLink: FC<NavLinkProps> = ({ path, children }) => {
   const pathname = usePathname();
   const isActive = pathname === path;
 
@@ -20,6 +20,6 @@ function NavLink({ path, children }: NavLinkProps) {
       {children}
     </Link>
   );
-}
+};
 
 export default NavLink;
